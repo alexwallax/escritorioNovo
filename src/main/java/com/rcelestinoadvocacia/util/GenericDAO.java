@@ -6,7 +6,6 @@ import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
-
 public abstract class GenericDAO<A> {
     
     protected static EntityManager manager;

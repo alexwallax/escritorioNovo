@@ -31,8 +31,6 @@ public class LoginBean {
     public void setLogin(Login login) {
         this.login = login;
     }
-    
-    
- 
+
     
 }
