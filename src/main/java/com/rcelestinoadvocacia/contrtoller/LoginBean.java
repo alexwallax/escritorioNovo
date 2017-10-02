@@ -12,7 +12,8 @@ public class LoginBean {
         
         public void salvar(){
             LoginDAO dao = new LoginDAO();
-            dao.insert(login);
+            dao.insert(this.login);
+            this.login = new Login();
         }
    
     
