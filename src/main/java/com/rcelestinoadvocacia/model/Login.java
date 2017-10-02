@@ -1,13 +1,23 @@
 package com.rcelestinoadvocacia.model;
 
+import java.io.Serializable;
 import java.util.Objects;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
-
-public class Login {
+@Entity
+public class Login implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    
+    
     @OneToMany
     private Usuario usuario;
+    @Id
     private String senha;
 
     public Login() {
