@@ -19,6 +19,7 @@
                 
                 <div class="col-md-8" style="background: ivory; height: 600px;"> 
                 <center> 
+                
                 <legend>Usuário</legend>
        
                 <h:form>
@@ -27,24 +28,44 @@
                     
                     <h:outputLabel value="Login" for="usuario" /><!-- value é o nome que vai aparecer - for é onde armazena -->                
                     <h:inputText id="Usuario" value="#{LoginBean.login.usuario}" /><!-- abre uma caixa para digitar e armazena em usuario -->
-                    
+            
                     <h:outputLabel value="Senha" for="senha" />
                     <h:inputText id="senha" value="#{LoginBean.login.senha}" />
                     <h:commandButton value="Entrar" action="#{LoginBean.salvar()}" />
+                    
+                    <legend>Lista de Usuarios</legend>
+                    <h:form>
+                        <h:dataTable value="#{loginBean.logins}" var="login">
+                            <h:column>
+                                <f:facet name="header">Usuario</f:facet>
+                                <h:outputText value="#{login.nome}" />
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Senha</f:facet>
+                                <h:outputText value="#{login.senha}" />
+                            </h:column>
+                        
+                        </h:dataTable>
+                        
+                    </h:form>
+                    
                     
                 </h:panelGrid>                
                 
                 </h:form>
                 </center>
+                
                 </div>
                 
                 <div class="col-md-2" style="background: beige; height: 600px;"></div> 
 
+               
+                
             </div>
             
-            <div class="row">
-                <div class="col-md-12" style="background: Beige; height: 200px;"></div>
-            </div>
+                <div class="row">
+                    <div class="col-md-12" style="background: Beige; height: 200px;"></div>
+                </div>
 
         </div>   
     </h:body>

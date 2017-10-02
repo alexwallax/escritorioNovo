@@ -2,6 +2,7 @@ package com.rcelestinoadvocacia.contrtoller;
 
 import com.rcelestinoadvocacia.dao.LoginDAO;
 import com.rcelestinoadvocacia.model.Login;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 
 @ManagedBean(name = "LoginBean")// informa para o JSF é um gerenciador de telas
@@ -15,7 +16,10 @@ public class LoginBean {
         }
    
     
-    
+    public List<Login> getLogins(){
+       LoginDAO dao = new LoginDAO();
+       return dao.selectAll();
+    }   
     
       
     
