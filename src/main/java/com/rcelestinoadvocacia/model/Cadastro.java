@@ -14,7 +14,7 @@ public class Cadastro implements Serializable {
     private int numeroProcesso;
     private String nome;
     private String cpf;
-    private String rj;
+    private String rg;
     private String telefone;
     private String endereco;
     private String email;
@@ -27,7 +27,7 @@ public class Cadastro implements Serializable {
         this.numeroProcesso = numeroProcesso;
         this.nome = nome;
         this.cpf = cpf;
-        this.rj = rj;
+        this.rg = rg;
         this.telefone = telefone;
         this.endereco = endereco;
         this.email = email;
@@ -74,12 +74,12 @@ public class Cadastro implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getRj() {
-        return rj;
+    public String getRg() {
+        return rg;
     }
 
-    public void setRj(String rj) {
-        this.rj = rj;
+    public void setRj(String rg) {
+        this.rg = rg;
     }
 
     public String getTelefone() {
@@ -133,7 +133,7 @@ public class Cadastro implements Serializable {
 
     @Override
     public String toString() {
-        return "Cadastro{" + "id=" + id + ", numeroProcesso=" + numeroProcesso + ", nome=" + nome + ", cpf=" + cpf + ", rj=" + rj + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + ", nomeMae=" + nomeMae + '}';
+        return "Cadastro{" + "id=" + id + ", numeroProcesso=" + numeroProcesso + ", nome=" + nome + ", cpf=" + cpf + ", rg=" + rg + ", telefone=" + telefone + ", endereco=" + endereco + ", email=" + email + ", nomeMae=" + nomeMae + '}';
     }
     
     

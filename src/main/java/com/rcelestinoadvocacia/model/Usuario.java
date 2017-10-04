@@ -15,12 +15,19 @@ public class Usuario implements Serializable {
     @OneToOne
     private Login login;
     private String senha;
+    private String nome;
 
     public Usuario() {
     }
 
     public Usuario(Login login) {
         this.login = login;
+    }
+
+    public Usuario(Login login, String senha, String nome) {
+        this.login = login;
+        this.senha = senha;
+        this.nome = nome;
     }
 
     public Usuario(String senha) {
@@ -76,6 +83,14 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "Usuario{" + "login=" + login + ", senha=" + senha + '}';
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
     
     

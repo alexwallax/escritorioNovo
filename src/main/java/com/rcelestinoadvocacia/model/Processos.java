@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Processos implements Serializable {
@@ -14,6 +15,7 @@ public class Processos implements Serializable {
     
     private Id id;
     private String nome;
+    @OneToOne
     private Cadastro cadastro;
     private String andamento;
     private String detalheProcesso;
