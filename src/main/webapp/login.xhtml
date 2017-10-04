@@ -30,8 +30,9 @@
                     <h:inputText id="Usuario" value="#{LoginBean.login.usuario}" /><!-- abre uma caixa para digitar e armazena em usuario -->
             
                     <h:outputLabel value="Senha" for="senha" />
-                    <h:inputText id="senha" value="#{LoginBean.login.senha}" />
+                    <h:inputSecret id="senha" value="#{LoginBean.login.senha}" />
                     <h:commandButton value="Entrar" action="#{LoginBean.salvar()}" />
+                   
                     
                     <legend>Lista de Usuarios</legend>
                     <h:form>
@@ -43,6 +44,7 @@
                             <h:column>
                                 <f:facet name="header">Senha</f:facet>
                                 <h:outputText value="#{login.senha}" />
+                  
                             </h:column>
                         
                         </h:dataTable>
