@@ -7,8 +7,9 @@ import com.rcelestinoadvocacia.model.Processos;
 import com.rcelestinoadvocacia.model.Usuario;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-
-@ManagedBean(name = "LoginBean")// informa para o JSF é um gerenciador de telas
+import javax.faces.bean.ViewScoped;
+@ViewScoped
+@ManagedBean(name = "LoginBean")// informa para o JSF ï¿½ um gerenciador de telas
 public class LoginBean {
     
     private Login login = new Login(); 
