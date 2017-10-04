@@ -16,6 +16,29 @@ public class LoginBean {
     private Cadastro cadastro = new Cadastro();
     private Processos processos = new Processos();
 
+    
+    public void salvar(){
+    LoginDAO dao = new LoginDAO();
+    dao.insert(this.login);
+    this.login = new Login();
+    }
+    
+    public void editar(Login login){
+    LoginDAO dao = new LoginDAO();
+    dao.update(login);
+    }
+
+    public void remover(Login login){
+    LoginDAO dao = new LoginDAO();
+    dao.delete(login); 
+    }
+    
+    public List<Login> getLogins(){
+    LoginDAO dao = new LoginDAO();
+    return dao.selectAll();
+    }   
+    
+    
     public Processos getProcessos() {
         return processos;
     }
@@ -42,21 +65,7 @@ public class LoginBean {
 
     public LoginBean() {
     }
-        
-        public void salvar(){
-            LoginDAO dao = new LoginDAO();
-            dao.insert(this.login);
-            this.login = new Login();
-        }
-   
-    
-    public List<Login> getLogins(){
-       LoginDAO dao = new LoginDAO();
-       return dao.selectAll();
-    }   
-    
-      
-    
+          
     public Login getLogin() {
         return login;
     }
