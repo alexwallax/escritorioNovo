@@ -1,16 +1,17 @@
 package com.rcelestinoadvocacia.util;
 
 import java.util.List;
+import static javafx.scene.input.KeyCode.T;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
-public abstract class GenericDAO<A> {
+public abstract class GenericDAO<T> {
     
     protected static EntityManager manager;
     
-    public abstract Class<A> getClassType();
+    public abstract Class<T> getClassType();
     
     public EntityManager getEm(){
         if (manager == null || !manager.isOpen()){
@@ -18,51 +19,51 @@ public abstract class GenericDAO<A> {
         }
         return manager;
     }
-    public A insert(A a){
+    public T insert(T t){
         EntityManager em = getEm();
         try {
             em.getTransaction().begin();
-            em.persist(a);
+            em.persist(t);
             em.getTransaction().commit();
         } catch (Exception error) {
             System.out.println("Erro: " + error);
             em.getTransaction().rollback();
         }
-        return a;
+        return t;
     }
-    public A delete(A a) {
+    public T delete(T t) {
         EntityManager em = getEm();
         try {
             em.getTransaction().begin();
-            em.remove(a);
+            em.remove(t);
             em.getTransaction().commit();
         } catch (Exception error) {
             System.out.println("Erro: " + error);
             em.getTransaction().rollback();
         }
-        return a;
+        return t;
     }
-    public A update(A a) {
+    public T update(T t) {
         EntityManager em = getEm();
         try {
             em.getTransaction().begin();
-            em.merge(a);
+            em.merge(t);
             em.getTransaction().commit();
         } catch (Exception error) {
             System.out.println("Erro: " + error);
             em.getTransaction().rollback();
         }
-        return a;
+        return t;
     }
-    public A selectById(int id){
+    public T selectById(int id){
     EntityManager em = getEm();
     return em.find(getClassType(), id);
     }
-    public List<A> selectAll() {
+    public List<T> selectAll() {
         EntityManager em = getEm();
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<A> query = builder.createQuery(getClassType());
-        TypedQuery<A> typedQuery = em.createQuery(query.select(query.from(getClassType())));
+        CriteriaQuery<T> query = builder.createQuery(getClassType());
+        TypedQuery<T> typedQuery = em.createQuery(query.select(query.from(getClassType())));
         return typedQuery.getResultList();
     }
 }
