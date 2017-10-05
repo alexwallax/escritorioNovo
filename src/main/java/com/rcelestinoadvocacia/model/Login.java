@@ -15,6 +15,17 @@ import javax.persistence.OneToOne;
 public class Login implements Serializable {
     
     @Id
+    private int id;
+
+    public Login(int id, String usuario, String senha) {
+        this.id = id;
+        this.usuario = usuario;
+        this.senha = senha;
+    }
+
+    public Login(int id) {
+        this.id = id;
+    }
     private String usuario;
     private String senha;
 
@@ -74,6 +85,14 @@ public class Login implements Serializable {
     @Override
     public String toString() {
         return "Login{" + "usuario=" + usuario + ", senha=" + senha + '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
 }
