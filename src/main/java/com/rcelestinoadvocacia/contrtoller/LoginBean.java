@@ -20,15 +20,10 @@ public class LoginBean {
         }
         this.login = new Login(); // para limpar a tela
     }
+
+    public LoginBean() {
+    }
     
-    
-    
-    
-    
-    
-    
-    
-   
 
     public Login getLogin() {
         return login;
