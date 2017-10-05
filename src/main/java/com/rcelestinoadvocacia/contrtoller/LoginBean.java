@@ -1,10 +1,9 @@
 package com.rcelestinoadvocacia.contrtoller;
 
 import com.rcelestinoadvocacia.dao.LoginDAO;
-//import com.rcelestinoadvocacia.model.Cadastro;
+
 import com.rcelestinoadvocacia.model.Login;
-//import com.rcelestinoadvocacia.model.Processos;
-//import com.rcelestinoadvocacia.model.Usuario;
+
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
@@ -13,9 +12,6 @@ import javax.faces.bean.ViewScoped;
 public class LoginBean {
     
     private Login login = new Login(); 
-//    private Usuario usuario = new Usuario();
-//    private Cadastro cadastro = new Cadastro();
-//    private Processos processos = new Processos();
 
     
     public void salvar(){
@@ -39,41 +35,17 @@ public class LoginBean {
     return dao.selectAll();
     }   
     
-    
-//    public Processos getProcessos() {
-//        return processos;
-//    }
-//
-//    public void setProcessos(Processos processos) {
-//        this.processos = processos;
-//    }
-//
-//    public Usuario getUsuario() {
-//        return usuario;
-//    }
-//
-//    public void setUsuario(Usuario usuario) {
-//        this.usuario = usuario;
-//    }
-//
-//    public Cadastro getCadastro() {
-//        return cadastro;
-//    }
-//
-//    public void setCadastro(Cadastro cadastro) {
-//        this.cadastro = cadastro;
+
+    public LoginBean() {
+    }
+          
+    public Login getLogin() {
+        return login;
     }
 
-//    public LoginBean() {
-//    }
-//          
-//    public Login getLogin() {
-//        return login;
-//    }
-//
-//    public void setLogin(Login login) {
-//        this.login = login;
-//    }
+    public void setLogin(Login login) {
+        this.login = login;
+    }
 
     
 }
