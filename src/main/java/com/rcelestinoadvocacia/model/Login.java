@@ -6,28 +6,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Login implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     
-    
-    @OneToMany
-    private Usuario usuario;
     @Id
+    private String usuario;
     private String senha;
 
     public Login() {
     }
 
-    public Login(Usuario usuario) {
+    public Login(String usuario) {
         this.usuario = usuario;
     }
 
-    public Login(Usuario usuario, String senha) {
+    public Login(String usuario, String senha) {
         this.usuario = usuario;
         this.senha = senha;
     }
@@ -40,11 +38,11 @@ public class Login implements Serializable {
         this.senha = senha;
     }
 
-    public Usuario getUsuario() {
+    public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
 
