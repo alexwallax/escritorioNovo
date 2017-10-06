@@ -13,7 +13,7 @@
 
     <name>escritorio</name>
 
-<dependencies>
+    <dependencies>
         
         <dependency>
             <groupId>javax</groupId>
