@@ -1,7 +1,6 @@
 package com.rcelestinoadvocacia.util;
 
 import java.util.List;
-import static javafx.scene.input.KeyCode.T;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
@@ -13,13 +12,13 @@ public abstract class GenericDAO<T> {
     
     public abstract Class<T> getClassType();
     
-    public EntityManager getEm(){
-        if (manager == null || !manager.isOpen()){
+    public EntityManager getEm() {
+        if (manager == null || !manager.isOpen()) {
             manager = DataBase.getInstance().getEm();
         }
         return manager;
     }
-    public T insert(T t){
+    public T insert(T t) {
         EntityManager em = getEm();
         try {
             em.getTransaction().begin();
@@ -31,6 +30,7 @@ public abstract class GenericDAO<T> {
         }
         return t;
     }
+    
     public T delete(T t) {
         EntityManager em = getEm();
         try {
@@ -43,6 +43,7 @@ public abstract class GenericDAO<T> {
         }
         return t;
     }
+    
     public T update(T t) {
         EntityManager em = getEm();
         try {
@@ -55,7 +56,8 @@ public abstract class GenericDAO<T> {
         }
         return t;
     }
-    public T selectById(int id){
+    
+    public T selectById(int id) {
     EntityManager em = getEm();
     return em.find(getClassType(), id);
     }
