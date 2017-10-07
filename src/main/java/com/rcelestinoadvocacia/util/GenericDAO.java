@@ -7,11 +7,11 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 
 public abstract class GenericDAO<T> {
-    
+
     protected static EntityManager manager;
-    
+
     public abstract Class<T> getClassType();
-    
+
     public EntityManager getEm() {
         if (manager == null || !manager.isOpen()) {
             manager = DataBase.getInstance().getEm();
@@ -58,9 +58,10 @@ public abstract class GenericDAO<T> {
     }
     
     public T selectById(int id) {
-    EntityManager em = getEm();
-    return em.find(getClassType(), id);
+        EntityManager em = getEm();
+        return em.find(getClassType(), id);
     }
+    
     public List<T> selectAll() {
         EntityManager em = getEm();
         CriteriaBuilder builder = em.getCriteriaBuilder();
@@ -68,4 +69,5 @@ public abstract class GenericDAO<T> {
         TypedQuery<T> typedQuery = em.createQuery(query.select(query.from(getClassType())));
         return typedQuery.getResultList();
     }
+
 }
