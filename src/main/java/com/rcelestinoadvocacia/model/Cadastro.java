@@ -12,7 +12,7 @@ public class Cadastro implements Serializable {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int numeroProcesso;
+    private String numeroProcesso;
     private String nome;
     private String cpf;
     private String rg;
@@ -28,7 +28,7 @@ public class Cadastro implements Serializable {
         this.id = id;
     }
 
-    public Cadastro(int numeroProcesso, String nome, String cpf, String rg, String telefone, String endereco, String email, String nomeMae) {
+    public Cadastro(String numeroProcesso, String nome, String cpf, String rg, String telefone, String endereco, String email, String nomeMae) {
         this.numeroProcesso = numeroProcesso;
         this.nome = nome;
         this.cpf = cpf;
@@ -39,7 +39,7 @@ public class Cadastro implements Serializable {
         this.nomeMae = nomeMae;
     }
 
-    public Cadastro(int id, int numeroProcesso, String nome, String cpf, String rg, String telefone, String endereco, String email, String nomeMae) {
+    public Cadastro(int id, String numeroProcesso, String nome, String cpf, String rg, String telefone, String endereco, String email, String nomeMae) {
         this.id = id;
         this.numeroProcesso = numeroProcesso;
         this.nome = nome;
@@ -67,11 +67,11 @@ public class Cadastro implements Serializable {
         this.id = id;
     }
 
-    public int getNumeroProcesso() {
+    public String getNumeroProcesso() {
         return numeroProcesso;
     }
 
-    public void setNumeroProcesso(int numeroProcesso) {
+    public void setNumeroProcesso(String numeroProcesso) {
         this.numeroProcesso = numeroProcesso;
     }
 
