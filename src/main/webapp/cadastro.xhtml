@@ -15,17 +15,66 @@
             <div class="row">
                 <div class="col-md-12">
                     <h:form id="cadastroCliente">
+                       
                         <fieldset>
                             <legend>Cadastro de Clientes</legend> 
                             <div class="form-group">
+                                <h:panelGrid columns="1" >
                                 <h:outputLabel for="nome" value="Nome" />
-                                <h:inputText id="nome" value="#{cadastroBean.cadastro.nome}" />
+                                <h:inputText id="nome" value="#{cadastroBean.cadastro.nome}" size="70" />
+                                <h:outputLabel for="email" value="Email" />
+                                <h:inputText id="email" value="#{cadastroBean.cadastro.email}" size="70"/>
+                                <h:outputLabel for="endereco" value="Endereço" />
+                                <h:inputText id="endereco" value="#{cadastroBean.cadastro.endereco}" size="70" />
+                                <h:outputLabel for="nomeMae" value="Nome da Mãe" />
+                                <h:inputText id="nomeMae" value="#{cadastroBean.cadastro.nomeMae}" size="70" />
+                                <h:outputLabel for="numeroProcesso" value="Numero do processo" />
+                                <h:inputText id="numeroProcesso" value="#{cadastroBean.cadastro.numeroProcesso}" />                            
+                                <h:outputLabel for="cpf" value="CPF " />
+                                <h:inputText id="cpf" value="#{cadastroBean.cadastro.cpf}" />
+                                <h:outputLabel for="rg" value="RG" />
+                                <h:inputText id="rg" value="#{cadastroBean.cadastro.rg}" />
+                                <br />
+                                <h:commandButton value="Salvar" action="#{cadastroBean.salvar()}" />
+                                </h:panelGrid>
                             </div>
-                        </fieldset>
+                        </fieldset>                   
                     </h:form>
+                   
+
+                    
                 </div>
             </div>
+            
+        <fieldset>                         
+            <legend>Lista de Clientes Cadastrados</legend>
+                <h:form>  
+                <h:dataTable value="#{cadastroBean.cadastros}" var="cadastro" >
+                <h:column>                  
+                    <f:facet name="header">ID</f:facet>
+                    <h:outputText value="#{cadastro.id}" />
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">Nome</f:facet>
+                    <h:outputText value="#{cadastro.nome}" />
+                </h:column> 
+                <h:column>
+                    <f:facet name="header">CPF</f:facet>
+                    <h:outputText value="#{cadastro.cpf}" />
+                </h:column>    
+                <h:column>
+                    <h:commandButton value="editar" action="#{cadastroBean.editar(cadastro)}" />
+                </h:column>
+                <h:column>
+                    <h:commandButton value="remover" action="#{cadastroBean.remover(cadastro)}" />
+                </h:column>
+                </h:dataTable>    
+             </h:form>
+        </fieldset>        
         </div>
+
+
+        
     </h:body>
 </html>
 
