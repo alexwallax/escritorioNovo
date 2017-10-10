@@ -11,6 +11,7 @@ import javax.faces.bean.ViewScoped;
 public class UsuarioBean {
     
     private Usuario usuario = new Usuario();
+    private Usuario senha = new Usuario();
     
     public void salvar(){
         UsuarioDAO dao = new UsuarioDAO();
@@ -39,6 +40,14 @@ public class UsuarioBean {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public Usuario getSenha() {
+        return senha;
+    }
+
+    public void setSenha(Usuario senha) {
+        this.senha = senha;
     }
     
     
