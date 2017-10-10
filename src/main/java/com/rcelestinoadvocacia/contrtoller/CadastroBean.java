@@ -43,8 +43,4 @@ public class CadastroBean {
     public void setCadastro(Cadastro cadastro) {
         this.cadastro = cadastro;
     }
-   
-    
-    
-    
 }

@@ -1,10 +1,21 @@
 package com.rcelestinoadvocacia.model;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-public class Processo {
+@Entity
+public class Processo implements Serializable {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nome;
     private String detalheProcesso;
+    @OneToOne
     private Cadastro cadastro;
 
     public Processo() {

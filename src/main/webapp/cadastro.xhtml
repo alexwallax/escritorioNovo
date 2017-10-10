@@ -21,21 +21,23 @@
                             <div class="form-group">
                                 <h:panelGrid columns="1" >
                                 <h:outputLabel for="nome" value="Nome" />
-                                <h:inputText id="nome" value="#{cadastroBean.cadastro.nome}" size="70" />
+                                <h:inputText id="nome" value="#{cadastroBean.cadastro.nome}" size="70" styleClass="form-control" />
                                 <h:outputLabel for="email" value="Email" />
-                                <h:inputText id="email" value="#{cadastroBean.cadastro.email}" size="70"/>
+                                <h:inputText id="email" value="#{cadastroBean.cadastro.email}" size="70" styleClass="form-control" />
                                 <h:outputLabel for="endereco" value="Endereço" />
-                                <h:inputText id="endereco" value="#{cadastroBean.cadastro.endereco}" size="70" />
+                                <h:inputText id="endereco" value="#{cadastroBean.cadastro.endereco}" size="70" styleClass="form-control" />
                                 <h:outputLabel for="nomeMae" value="Nome da Mãe" />
-                                <h:inputText id="nomeMae" value="#{cadastroBean.cadastro.nomeMae}" size="70" />
+                                <h:inputText id="nomeMae" value="#{cadastroBean.cadastro.nomeMae}" size="70" styleClass="form-control" />
                                 <h:outputLabel for="numeroProcesso" value="Numero do processo" />
-                                <h:inputText id="numeroProcesso" value="#{cadastroBean.cadastro.numeroProcesso}" />                            
+                                <h:inputText id="numeroProcesso" value="#{cadastroBean.cadastro.numeroProcesso}" size="50" styleClass="form-control" /> 
+                                <h:outputLabel for="telefone" value="Telefone" />
+                                <h:inputText id="telefone" value="#{cadastroBean.cadastro.telefone}" styleClass="form-control" />
                                 <h:outputLabel for="cpf" value="CPF " />
-                                <h:inputText id="cpf" value="#{cadastroBean.cadastro.cpf}" />
+                                <h:inputText id="cpf" value="#{cadastroBean.cadastro.cpf}" styleClass="form-control" />
                                 <h:outputLabel for="rg" value="RG" />
-                                <h:inputText id="rg" value="#{cadastroBean.cadastro.rg}" />
+                                <h:inputText id="rg" value="#{cadastroBean.cadastro.rg}" styleClass="form-control" />
                                 <br />
-                                <h:commandButton value="Salvar" action="#{cadastroBean.salvar()}" />
+                                <h:commandButton value="Salvar" action="#{cadastroBean.salvar()}" styleClass="btn btn-primary btn-block" />
                                 </h:panelGrid>
                             </div>
                         </fieldset>                   
@@ -63,18 +65,16 @@
                     <h:outputText value="#{cadastro.cpf}" />
                 </h:column>    
                 <h:column>
-                    <h:commandButton value="editar" action="#{cadastroBean.editar(cadastro)}" />
+                    <h:commandButton value="editar" action="#{cadastroBean.editar(cadastro)}" styleClass="btn btn-success btn-block" />
                 </h:column>
                 <h:column>
-                    <h:commandButton value="remover" action="#{cadastroBean.remover(cadastro)}" />
+                    <h:commandButton value="remover" action="#{cadastroBean.remover(cadastro)}" styleClass="btn btn-danger btn-block" />
                 </h:column>
                 </h:dataTable>    
              </h:form>
         </fieldset>        
         </div>
 
-
-        
     </h:body>
 </html>
 
