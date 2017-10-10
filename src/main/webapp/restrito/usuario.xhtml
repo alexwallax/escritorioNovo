@@ -18,6 +18,13 @@
                     <p:inputText id="senha" value="#{usuarioBean.usuario.senha}" />
                     <p:commandButton value="Salvar" action="#{usuarioBean.salvar}" update="@form" />
                 </p:panelGrid>
+    
+                <h:form id="formLista">
+                    <p:fieldset legend="Lista de Usuarios">
+                        <p:dataTable id="listaUsuarios" value="#{usuarioBean.usuarios}" />
+                        
+                    </p:fieldset>
+                </h:form>
             </h:form>
         </p:fieldset>
     </h:body>
