@@ -22,7 +22,7 @@ public class LoginBean {
             HttpSession session = (HttpSession) context.getExternalContext().getSession(false);
             session.setAttribute("login", login);
 //          session.setAttribute("usuarioLogado", true); esse subistitui a linha acima
-        return "restrito/usuario?faces-redirect=true";
+        return "restrito/cadastro?faces-redirect=true";
     } else {
             FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_FATAL, "Info", "Login ou Senha Incorreto!!!");
             context.addMessage(null, message);

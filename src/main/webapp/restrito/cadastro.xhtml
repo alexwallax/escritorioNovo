@@ -42,9 +42,7 @@
                             </div>
                         </fieldset>                   
                     </h:form>
-                   
 
-                    
                 </div>
             </div>
             
@@ -52,18 +50,18 @@
             <legend>Lista de Clientes Cadastrados</legend>
                 <h:form>  
                 <h:dataTable value="#{cadastroBean.cadastros}" var="cadastro" >
-                <h:column>                  
+        <!--        <h:column>                  
                     <f:facet name="header">ID</f:facet>
                     <h:outputText value="#{cadastro.id}" />
-                </h:column> 
+                </h:column>  -->
                 <h:column>
                     <f:facet name="header">Nome</f:facet>
                     <h:outputText value="#{cadastro.nome}" />
                 </h:column> 
-                <h:column>
+        <!--        <h:column>
                     <f:facet name="header">CPF</f:facet>
                     <h:outputText value="#{cadastro.cpf}" />
-                </h:column>    
+                </h:column>  -->  
                 <h:column>
                     <h:commandButton value="editar" action="#{cadastroBean.editar(cadastro)}" styleClass="btn btn-success btn-block" />
                 </h:column>
