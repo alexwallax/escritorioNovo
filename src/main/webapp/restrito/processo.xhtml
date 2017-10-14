@@ -13,24 +13,53 @@
     <h:body>
         <div class="container">
             <div class="row">
-                <div class="col-md-7">
-                    <h:form id="formCadastroProcesso">
+                <div class="col-md-12">
+                    <h:form id="CadastroProcesso">
+                        
                         <fieldset>
                             <legend>Processos</legend>
                             <div class="form-group">
+                                <h:panelGrid columns="1" >
                                 <h:outputLabel for="nome" value="Nome do processo" />
                                 <h:inputText id="nome" value="#{processoBean.processo.nome}" styleClass="form-control" />
-                            </div>
-                            <div class="form-group">
+                         
                                 <h:outputLabel for="detalheProcesso" value="Detalhe de Processo" />
                                 <h:inputTextarea id="detalheProcesso" value="#{processoBean.processo.detalheProcesso}" styleClass="form-control" />
+                       
+                                <h:outputLabel for="cadastro" value="Nome do cliente" />
+                                <h:inputText id="cadastro" value="#{processoBean.processo.nome}" styleClass="form-control" />
+                        
+                                <h:commandButton value="Salvar" action="#{processoBean.salvar()}" styleClass="btn btn-primary btn-block" />
+                                <br />
+                                </h:panelGrid>
                             </div>
-              
-                            <h:commandButton value="Salvar" action="#{processoBean.salvar()}" styleClass="btn btn-primary btn-block" />
+
+                            
                         </fieldset>
                     </h:form>
                 </div>
             </div>
+            
+            <fieldset>                    
+                <legend>Processos em andamento</legend> 
+                <h:form>
+                <h:dataTable value="#{processoBean.processos}" var="processo" >
+                    <h:column>
+                        <f:facet name="header">Nome</f:facet>
+                        <h:outputText value="#{processo.nome}" />
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="editar" action="#{processoBean.editar(processo)}" styleClass="btn btn-success btn-block" />
+                    </h:column>
+                    <h:column>
+                        <h:commandButton value="remover" action="#{processoBean.remover(processo)}" styleClass="btn btn-danger btn-block" />
+                    </h:column>
+                </h:dataTable>
+
+                </h:form>
+
+            </fieldset> 
+            
         </div>
     </h:body>
 </html>
