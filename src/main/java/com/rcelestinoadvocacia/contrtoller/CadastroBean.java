@@ -5,12 +5,14 @@ import com.rcelestinoadvocacia.model.Cadastro;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 @ViewScoped
 @ManagedBean(name = "cadastroBean")
 public class CadastroBean {
     
     private Cadastro cadastro = new Cadastro();
+    
     
     public void salvar() {
         CadastroDAO dao = new CadastroDAO();
