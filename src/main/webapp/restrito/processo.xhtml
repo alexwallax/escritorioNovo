@@ -11,7 +11,7 @@
         <h:outputScript library="js" name="jquery-3.2.1.min.js" />
     </h:head>
     <h:body>
-        <div class="container">
+        <div class="container" align="center">
             <div class="row">
                 <div class="col-md-12">
                     <h:form id="CadastroProcesso">
@@ -20,8 +20,8 @@
                             <legend>Processos</legend>
                             <div class="form-group">
                                 <h:panelGrid columns="1" >
-                                <h:outputLabel for="nome" value="Nome do processo" />
-                                <h:inputText id="nome" value="#{processoBean.processo.nome}" styleClass="form-control" />
+                                <h:outputLabel for="id" value="Numero do processo" />
+                                <h:inputText id="id" value="#{processoBean.processo.id}" size="100" styleClass="form-control" />
                          
                                 <h:outputLabel for="detalheProcesso" value="Detalhe de Processo" />
                                 <h:inputTextarea id="detalheProcesso" value="#{processoBean.processo.detalheProcesso}" styleClass="form-control" />
